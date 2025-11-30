@@ -60,7 +60,8 @@ p {
 
 /* MAIN SECTIONS */
 .introCard,
-.projectSection {
+.projectSection,
+footer {
   margin: 50px 80px;
   padding: 2.2rem;
 }
@@ -101,8 +102,6 @@ p {
   left: 50%;
   transform: translateX(-50%);
 }
-
-
 
 .introDesc {
   max-height: 100%;
@@ -198,4 +197,54 @@ p {
 .projectInfo p {
   height: 100%;
   line-height: 1.1;
+}
+
+/**FOOTER**/
+footer {
+  display: flex;
+  padding: 20px 50px;
+  align-items: center;
+  box-shadow: var(--shadow2);
+  border-radius: var(--radius1);
+  gap: 40px;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.footerItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerItem {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerItem img {
+  width: 20px;
+}
+
+.footerLinks {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footerLinks img {
+  width: 35px;
+  height: auto;
+}
+
+.footerPhoto {
+  width: 35%;
+  border-radius: var(--radius1);
+  box-shadow: var(--shadow1);
 }
