@@ -392,11 +392,15 @@ footer {
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 8vw;
+  }
+
+  h3 {
+    font-size: 5vw;
   }
 
   p {
-    font-size: 22px;
+    font-size: 4vw;
   }
 
   .introLinks {
@@ -409,6 +413,11 @@ footer {
 
   .projectHeader {
     justify-content: center;
+  }
+
+  .projectItem {
+    padding: 20px;
+    width: 65vw;
   }
 
   footer {
