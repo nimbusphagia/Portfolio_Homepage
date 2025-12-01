@@ -17,13 +17,17 @@ function projectCard(project) {
   urlContainer.classList.add("projectLinks");
   const gitUrl = document.createElement("a");
   gitUrl.href = project.repoUrl;
+  gitUrl.target = "_blank";
   const gitIcon = document.createElement("img");
   gitIcon.src = iconGit
+  gitIcon.alt = "Github Repository";
   gitUrl.appendChild(gitIcon);
   const pageUrl = document.createElement("a");
   pageUrl.href = project.pagesUrl;
+  pageUrl.target = "_blank";
   const pageIcon = document.createElement("img");
   pageIcon.src = iconPage;
+  pageIcon.alt = "Live Demo";
   pageUrl.appendChild(pageIcon);
   urlContainer.appendChild(gitUrl);
   urlContainer.appendChild(pageUrl);
