@@ -52,12 +52,16 @@ body {
   --radius1: 1em;
   --radius2: 0.5em;
   --shadow1: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-  ;
   --shadow2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   /* Styles */
-  width: 100vw;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  box-sizing: border-box;
+  margin: 30px 50px;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -65,7 +69,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.6em, 2.5vw, 50px);
+  font-size: clamp(1.2em, 2.5vw, 50px);
   font-family: var(--font1);
 }
 
@@ -79,35 +83,33 @@ p {
   font-size: clamp(16px, 1.4vw, 26px);
 }
 
-/* MAIN SECTIONS */
-.introCard,
-.projectSection,
-footer {
-  margin: 50px 80px;
-  padding: 2.2rem;
-}
 
 /*
  * ABOUT ME 
  */
 .introCard {
   /*Style*/
-  height: 32vh;
+  height: 220px;
+  width: 100%;
   border-radius: var(--radius1);
+  box-sizing: border-box;
   box-shadow: var(--shadow2);
   /* Layout */
-  display: flex;
-  gap: 1em;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(100px, 18%) 7.5fr;
+  padding: 20px;
+  gap: 20px;
 }
 
 .introPhoto {
-  flex-shrink: 0;
-  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  min-width: 0;
   border-radius: var(--radius2);
   position: relative;
-  overflow: hidden;
   box-shadow: var(--shadow1);
+  display: flex;
+  justify-content: center;
 }
 
 .introPhoto img {
@@ -124,6 +126,8 @@ footer {
 }
 
 .introDesc {
+  min-height: 0;
+  min-width: 0;
   max-height: 100%;
   /*Layout*/
   display: flex;
@@ -131,8 +135,13 @@ footer {
   justify-content: space-between;
 }
 
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .introText p {
-  margin: 1rem 0;
   line-height: 1.1;
   text-align: justify;
 }
@@ -143,14 +152,17 @@ footer {
 }
 
 .introLinks {
+  min-width: 0;
+  min-height: 0;
   max-width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 1rem;
 }
 
 .introLinks img {
-  width: 35px;
+  width: 28px;
   height: auto;
 }
 
@@ -158,17 +170,20 @@ footer {
  * PROJECTS
  */
 .projectSection {
-
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 35px;
+}
+
+.projectSection h2 {
+  text-align: center;
 }
 
 .projectsContainer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 20px;
   justify-content: space-evenly;
 }
 
@@ -180,7 +195,7 @@ footer {
   flex-direction: column;
   box-shadow: var(--shadow2);
   border-radius: var(--radius1);
-  padding: 30px;
+  padding: 18px;
   transition: transform 0.2s ease-in;
 }
 
@@ -228,8 +243,9 @@ footer {
 
 /**FOOTER**/
 footer {
-  display: flex;
-  padding: 30px 50px;
+  display: grid;
+  grid-template-columns: auto minmax(100px, 25%);
+  padding: 20px 30px;
   align-items: center;
   box-shadow: var(--shadow2);
   border-radius: var(--radius1);
@@ -267,12 +283,12 @@ footer {
 }
 
 .footerLinks img {
-  width: 35px;
+  width: 28px;
   height: auto;
 }
 
 .footerPhoto {
-  width: 35%;
+  width: 100%;
   border-radius: var(--radius1);
   box-shadow: var(--shadow1);
 }
@@ -296,6 +312,10 @@ footer {
     overflow: initial;
     width: 75vw;
     margin: 5vh auto;
+  }
+
+  .introDesc {
+    grid-column: 1/3;
   }
 
   .introText {
@@ -342,6 +362,7 @@ footer {
   }
 
   footer {
+    display: flex;
     flex-direction: column;
   }
 
@@ -389,10 +410,6 @@ footer {
 
   .introDesc {
     text-align: center;
-  }
-
-  h2 {
-    font-size: 8vw;
   }
 
   h3 {
